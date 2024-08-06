@@ -12,6 +12,6 @@
 
 
 
-# 4. Use a built-in command to define a function called absolute_value that reperesents the absolute value function k(x)=|x|.
+# 4. Use a built-in command to define a function called absolute_value that represents the absolute value function k(x)=|x|.
 
 
