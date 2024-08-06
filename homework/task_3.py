@@ -15,10 +15,12 @@
 
 # 4. Define a function called distance_from_origin that takes in a tuple representing a point
 # in the xy-coordinate plane and outputs its distance from the origin.
+# Hint: Learn how to "unpack" a tuple input.
 
 
 
 # 5. Define a function called distance_between that takes in two tuples representing points
 # in the xy-coordinate plane and outputs their distance from each other.
+# Hint: "Unpack" each input tuple.
 
 
