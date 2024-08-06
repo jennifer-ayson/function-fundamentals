@@ -1,6 +1,6 @@
-# Python Fundamentals
+# Function Fundamentals
 
-In this repository, we will solidify our understanding of conditional statements, loops, and functions in Python. Here is a brief overview of the repository structure:
+In this repository, we will explore how to represent functions in Python. Here is a brief overview of the repository structure:
 ```
 python-fundamentals
 ├── homework/
