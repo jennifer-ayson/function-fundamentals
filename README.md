@@ -6,6 +6,7 @@ python-fundamentals
 ├── homework/
 │   ├── README.md
 │   ├── __init__.py
+|   ├── homework_scratch.ipynb
 │   ├── task_1.py
 │   ├── task_2.py
 │   └── task_3.py
