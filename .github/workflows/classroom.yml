@@ -1,0 +1,55 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+- workflow_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Python Tests for Task 1
+      id: python-tests-for-task-1
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Python Tests for Task 1
+        setup-command: apt-get update; apt-get install -y wget; pip install pytest;
+          wget https://raw.githubusercontent.com/jessicadesilva/test-repo/main/tests_2/test_task_1.py
+          -O homework/test_task_1.py
+        command: cd homework; python -m pytest test_task_1.py --tb=no -vvv
+        timeout: 10
+        max-score: 1
+    - name: Python Tests for Task 2
+      id: python-tests-for-task-2
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Python Tests for Task 2
+        setup-command: wget https://raw.githubusercontent.com/jessicadesilva/test-repo/main/tests_2/test_task_2.py
+          -O homework/test_task_2.py
+        command: cd homework; python -m pytest test_task_2.py --tb=no -vvv
+        timeout: 10
+        max-score: 1
+    - name: Python Tests for Task 3
+      id: python-tests-for-task-3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Python Tests for Task 3
+        setup-command: wget https://raw.githubusercontent.com/jessicadesilva/test-repo/main/tests_2/test_task_3.py
+          -O homework/test_task_3.py
+        command: cd homework; python -m pytest test_task_3.py --tb=no -vvv
+        timeout: 10
+        max-score: 1
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        PYTHON-TESTS-FOR-TASK-1_RESULTS: "${{steps.python-tests-for-task-1.outputs.result}}"
+        PYTHON-TESTS-FOR-TASK-2_RESULTS: "${{steps.python-tests-for-task-2.outputs.result}}"
+        PYTHON-TESTS-FOR-TASK-3_RESULTS: "${{steps.python-tests-for-task-3.outputs.result}}"
+      with:
+        runners: python-tests-for-task-1,python-tests-for-task-2,python-tests-for-task-3
