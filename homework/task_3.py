@@ -6,7 +6,7 @@ def first_element(list):
 
 # 2. Define a function called last_element that takes in a list and outputs its last element.
 def last_element(list):
-  return list[-1]
+ return list[-1]
 
 
 # 3. Define a function called first_last_sum that takes in a list and outputs the sum of
