@@ -19,11 +19,23 @@ def first_last_sum(list):
 # 4. Define a function called distance_from_origin that takes in a tuple representing a point
 # in the xy-coordinate plane and outputs its distance from the origin.
 # Hint: Learn how to "unpack" a tuple input.
-def distance_from_origin 
+def distance_from_origin(ordered_pair):
+  x, y = ordered_pair
+
+  a = x ** 2
+  b = y ** 2
+  c = a + b
+  return (c**.5)
 
 
-# 5. Define a function called distance_between that takes in two tuples representing points
+distance_from_origin((9,10))
+
+
+# 5. Define a function called d(istance_between that takes in two tuples representing points
 # in the xy-coordinate plane and outputs their distance from each other.
 # Hint: "Unpack" each input tuple.
+
+
+
 
 

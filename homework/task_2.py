@@ -33,7 +33,7 @@ def min_of_three(x,y,z):
 # 4. Define a function called midrange that takes in three numerical inputs and outputs the average of the maximum
 # and minimum values. This function should call the functions created in tasks 1 - 3.
 def midrange(x,y,z):
-  average = (max_of_three?(x,y,x) + min_of_three(x,y,z))/2
+  average = (max_of_three(x,y,z) + min_of_three(x,y,z))/2
   return average
 
 
